@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Messages</h2>
+<a href="/add">Add a Message</a><br />
+<div th:each="message :${messages}">
+    <div th:if="${message.content} != null">
+        <p th:inline="text"><strong>[[${message.sentby}]]</strong>  .  [[${message.posteddate}]] <br /> [[${message.content}]]</p>
+    </div>
+</div>
+<br />
+</body>
+</html>
